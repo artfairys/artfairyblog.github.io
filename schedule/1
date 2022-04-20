@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Artfairy's blog</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+	</head>
+	<body id="body">
+		<div class="bj-gd" style="
+		    height: 100%;
+		    left: 0;
+		    position: fixed;
+		    top: 0;
+		    width: 100%;
+		    z-index: -998;
+		    background: url(./image/bg2.jpg) no-repeat center center fixed;
+			opacity: .8;
+		    -webkit-background-size: cover;
+		    -moz-background-size: cover;
+		    -o-background-size: cover;
+		    background-size: cover;  
+		"></div>
+		<div class="alllayout">
+			<script>
+				function openly(){
+						if(window.name==""){
+							
+							window.location.href="./pages/pageInfo.html";
+							
+						}
+						window.name="onload";
+				}
+				setTimeout('openly()',5000);
+			</script>
+			<!-- 头部 -->
+			<header id="header">
+				<div class="header_home">
+					<a href="">
+						<span class="iconfont icon-home2" style="position: relative;top: -1px;left: -2px;font-weight: 100;margin: 0;"></span>
+						Artfairy's blog
+					</a>
+				</div>
+				<div class="header_main">
+					<!-- 搜索框 -->
+					<input type="text" placeholder="输入关键词搜索..." checked="checked">
+					<span class="iconfont icon-search-line"></span>
+					<!-- 音乐 -->
+					<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=52 src="//music.163.com/outchain/player?type=2&id=412319569&auto=1&height=32"></iframe> -->
+				</div>
+			</header>
+			<main id="main">
+				<!-- 主体导航部分 -->
+				<div class="main_nav">
+					<!-- 导航头部 -->
+					<div class="nav_header">
+						<img src="./image/QQ图片20220412173820.jpg" alt="" class="turn360">
+						<span>
+							<script>
+								window.onload=loadYiYan();
+								function loadYiYan(){
+									xmlhttp = new XMLHttpRequest();
+									
+									xmlhttp.onreadystatechange=function(){
+										if(xmlhttp.readyState==4){
+											if(xmlhttp.status==200){
+												var js = JSON.parse(xmlhttp.responseText);
+												document.getElementById("mingyan").innerHTML=js.hitokoto+"——"+js.from;
+												console.log(js.hitokoto+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp————"+js.from);
+											}
+										}
+									}
+									xmlhttp.open("GET","https://v1.hitokoto.cn");
+									xmlhttp.send();
+									
+								}
+							</script>
+							<script>
+								var my = ['嘻嘻！这都让你发现啦！','别再戳我啦！很痛的!','我说我说，第一篇文章有惊喜！嘻嘻'];
+								function mingYan(){
+									document.getElementById('mingyan').innerHTML = my[parseInt(Math.random()*10)%my.length];
+								}
+								//需要更改名言时,调用一次mingYan即可，如果只需要载入是显示一个名言,不需要其他时刻再更换名言,直接用document.getElementById('mingyan').innerHTML = my[parseInt(Math.random()*10)%my.length];就行了
+							</script>
+							<strong class="block" onclick="mingYan()">Artfairy</strong>
+							<span class="sign block" id="mingyan" onclick="loadYiYan()"></span>
+						</span>
+					</div>
+					<div class="crossLine"></div>
+					<!-- 导航主体 -->
+					<nav class="nav_main">
+						<ul class="navList">
+							<li class="navTitle">
+								<span>导航</span>
+							</li>
+							<li>
+								<a href="">
+									<span class="iconfont icon-home2"></span>
+									首页
+								</a>
+							</li>
+							<li>
+								<a href="">
+								<span class="iconfont icon-comment"></span>
+								博客壁纸随心
+								</a>
+							</li>
+							<li>
+								<a href="">
+								<span class="iconfont icon-android"></span>
+								日记
+								</a>
+							</li>
+							<li>
+								<a href="">
+								<span class="iconfont icon-weibo"></span>
+								学习记录
+								</a>
+							</li>
+							<!-- <li>
+								<a href="">
+								<span class="iconfont icon-home2"></span>
+								首页
+								</a>
+							</li>
+							<li>
+								<a href="">
+								<span class="iconfont icon-comment"></span>
+								光影
+								</a>
+							</li> -->
+						</ul>
+					</nav>
+					<!-- 组成 -->
+					<div class="compost">
+						<ul class="navList">
+							<li class="navTitle">
+								<span>组成</span>
+							</li>
+<!-- 							<li>
+								<a href="">
+									<span class="iconfont icon-folder"></span>
+									分类
+									<span class="iconfont icon-right iconbtn"></span>
+									<span class="iconfont icon-arrowdown iconbtn" style="display: none;"></span>
+								</a>
+								<ul class="nav_sub">
+									<li><a href="">
+									技巧杂烩
+									</a></li>
+									<li><a href="">学习笔记</a></li>
+									<li><a href="">兴趣爱好</a></li>
+									<li><a href="">生活随笔</a></li>
+								</ul>
+							</li> -->
+							
+							<li>
+								<a href="">
+								<span class="iconfont icon-repeat"></span>
+								页面
+								<span class="iconfont icon-right iconbtn"></span>
+								<span class="iconfont icon-arrowdown iconbtn" style="display: none;"></span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+								<span class="iconfont icon-share"></span>
+								友联
+								<span class="iconfont icon-right iconbtn"></span>
+								<span class="iconfont icon-arrowdown iconbtn" style="display: none;"></span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="nav_footer">
+						<a href=""><div class="rss_left">
+							<span class="iconfont icon-rss"></span>文章
+						</div></a>
+						<a href=""><div class="rss_right">
+							<span class="iconfont icon-rss1"></span>评论
+						</div></a>
+					</div>
+				</div>
+				<!-- 主体内容部分 -->
+				<div class="main_body">
+					<div class="center_part">
+						<!-- 公告位置 -->
+						<div class="alert">
+							<span class="iconfont icon-gonggao">
+							</span><p>欢迎到留言板踩一踩~~ [边侧栏->页面->留言板]</p>
+							<span class="iconfont icon-off-search close"></span>
+							<script>
+								document.getElementsByClassName("close")[0].onclick = function() {
+										document.getElementsByClassName("alert")[0].style.display = "none";
+								}
+							</script>
+						</div>
+						<header class="main_header">
+							<h1 class="letterSpacing">Artfairy's blog</h1>
+							<small class="letterSpacing">Focus is the key to success.</small>
+						</header>
+						<div class="wrapper">
+							<!-- 首页文章部分 -->
+							<div class="blog_post">
+								<div class="panel panelCss">
+									<div class="index_post_img">
+										<a href="./pages/pageInfo.html">
+											<div class="panel_img_top backgroundImgCss big03" style="background-image: url(./img/1.jpg);"></div>
+										</a>
+									</div>
+									<script>
+										var time = 4:30
+										
+
+										function first(){
+											alert("更新着，时间："+time)
+										}
+									</script>
+									<div class="post_text">
+										<h2 class="panelTitleCss">
+											<a href="" onclick="first()" >
+												<span class="topLable" onclick="first()">置顶</span>
+												我们每天度过的日常,也许就是不断发生的奇迹!
+											</a>
+										</h2>
+										<p class="panelTextCss" onclick="first()">日々私たちが过ごしている日常は、実は奇迹の连続なのかもしれない.</p>
+										<!-- 横向的那种 -->
+										<div class="crossLine" style="margin: 10px 0;background-color: rgb(237, 241, 242);"></div>
+										<!-- 发布者 时间 评论 -->
+										<div class="text_bottom">
+											<i class="fontello">
+												<span class="fontello_user">
+													<span class="iconfont icon-yonghu icon600bold"></span>未知/将要发布，时间:16:30
+												</span>
+												<span class="fontello_time">
+													<span class="iconfont icon-riqi icon600bold"></span>0000 年 00 月 00 日
+												</span>
+												<a href="">
+													<span class="fontello_comments">
+														<span class="iconfont icon-commentso icon600bold"></span>0条评论
+													</span>
+												</a>
+											</i>
+										</div>
+									</div>
+								</div>
+
+								<div class="panel panelCss">
+									<div class="index_post_img">
+										<a href="">
+											<div class="panel_img_top backgroundImgCss big03" style="background-image: url(./img/2.jpg);"></div>
+										</a>
+									</div>
+									<div class="post_text">
+										<h2 class="panelTitleCss">
+											<a href="">
+												<span class="topLable">置顶</span>
+												[模拟]花生采集 O(nLogN)
+											</a>
+										</h2>
+										<p class="panelTextCss">
+											题目 鲁宾逊先生有一只宠物猴，名叫多多。这天，他们两个正沿着乡间小路散步，突然发现路边的告示牌上贴着一张小小的纸条：“欢迎免费品尝我种的花生！——熊字”。
+											鲁宾逊先生和多多都很开心，因为花生正是他们的最爱。在告示牌背后，路边真的有一块花生田，花生植株整齐地排列成矩形网格（如图1）。有经验的多多..
+										</p>
+										<!-- 横向的那种 -->
+										<div class="crossLine" style="margin: 10px 0;background-color: rgb(237, 241, 242);"></div>
+										<!-- 发布者 时间 评论 -->
+										<div class="text_bottom">
+											<i class="fontello">
+												<span class="fontello_user">
+													<span class="iconfont icon-yonghu icon600bold"></span>未知/将要发布，时间:16:30
+												</span>
+												<span class="fontello_time">
+													<span class="iconfont icon-riqi icon600bold"></span>0000 年 00 月 00 日
+												</span>
+												<a href="">
+													<span class="fontello_comments">
+														<span class="iconfont icon-commentso icon600bold"></span>0条评论
+													</span>
+												</a>
+											</i>
+										</div>
+									</div>
+								</div>
+
+								<div class="panel_small panelCss">
+									<a href="">
+										<div class="index_post_img_small backgroundImgCss big08" style="background-image: url(./img/3.jpg);"></div>
+									</a>
+									<div class="post_text">
+										<h2 class="panelTitleCss">
+											<a href="">
+												域名解析失败原因
+											</a>
+										</h2>
+										<p class="panelTextCss">
+											1、dns错误
+
+											解决办法：使用杀毒软件对电脑进行全盘扫描。
+
+											2、网站故障
+
+											当发现打开某些网站会出现dns错误，但又有些大站打开一切正常，这种情况多数由于网站域名服务器故障或网站服务器有故障。
+
+											解决办法：由于是网站本身的...
+
+										</p>
+										<!-- 横向的那种 -->
+										<div class="crossLine" style="margin: 16px 0;background-color: rgb(237, 241, 242);"></div>
+										<!-- 发布者 时间 评论 -->
+										<div class="text_bottom">
+											<i class="fontello">
+												<span class="fontello_user">
+													<span class="iconfont icon-yonghu icon600bold"></span>Artfairy
+												</span>
+												<span class="fontello_time">
+													<span class="iconfont icon-riqi icon600bold"></span>2022 年 4月 13日
+												<a href="">
+													<span class="fontello_comments">
+														<span class="iconfont icon-commentso icon600bold"></span>24条评论
+													</span>
+												</a>
+											</i>
+										</div>
+									</div>
+								</div>
+
+								<div class="panel_small panelCss">
+									<a href="">
+										<div class="index_post_img_small backgroundImgCss big08" style="background-image: url(./img/4.jpg);"></div>
+									</a>
+									<div class="post_text">
+										<h2 class="panelTitleCss">
+											<a href="./pages/paneltitlecss.html">
+												域名解析
+											</a>
+										</h2>
+										<p class="panelTextCss">
+											域名解析是把域名指向网站空间IP，让人们通过注册的域名可以方便地访问到网站的一种服务。IP地址是网络上标识站点的数字地址，为了方便记忆，采用域名来代替IP地址标识站点地址。域名解析就是域名到IP地址的转换过程。域名的解析工作由DNS服务器完成...
+										</p>
+										<!-- 横向的那种 -->
+										<div class="crossLine" style="margin: 16px 0;background-color: rgb(237, 241, 242);"></div>
+										<!-- 发布者 时间 评论 -->
+										<div class="text_bottom">
+											<i class="fontello">
+												<span class="fontello_user">
+													<span class="iconfont icon-yonghu icon600bold"></span>Artfairy
+												</span>
+												<span class="fontello_time">
+													<span class="iconfont icon-riqi icon600bold"></span>2022 年 04 月 13 日
+												</span>
+												<a href="">
+													<span class="fontello_comments">
+														<span class="iconfont icon-commentso icon600bold"></span>4条评论
+													</span>
+												</a>
+											</i>
+										</div>
+									</div>
+								</div>
+
+								<div class="panel panelCss">
+									<div class="index_post_img">
+										<a href="">
+											<div class="panel_img_top backgroundImgCss big03" style="background-image: url(./img/5.jpg);"></div>
+										</a>
+									</div>
+									<div class="post_text">
+										<h2 class="panelTitleCss">
+											<a href="./pages/ymjx.html">
+												获取cname
+											</a>
+										</h2>
+										<p class="panelTextCss">
+											别名地址又CNAME地址，这里展示的是如何查看百家云 空间/虚拟主机 的别名CNAME地址...
+										</p>
+										<!-- 横向的那种 -->
+										<div class="crossLine" style="margin: 10px 0;background-color: rgb(237, 241, 242);"></div>
+										<!-- 发布者 时间 评论 -->
+										<div class="text_bottom">
+											<i class="fontello">
+												<span class="fontello_user">
+													<span class="iconfont icon-yonghu icon600bold"></span>Artfairy
+												</span>
+												<span class="fontello_time">
+													<span class="iconfont icon-riqi icon600bold"></span>2022 年 04 月 13 日
+												</span>
+												<a href="">
+													<span class="fontello_comments">
+														<span class="iconfont icon-commentso icon600bold"></span>22条评论
+													</span>
+												</a>
+											</i>
+										</div>
+									</div>
+								</div>
+
+								<div class="panel panelCss">
+									<div class="index_post_img">
+										<a href="">
+											<div class="panel_img_top backgroundImgCss big03" style="background-image: url(./img/6.jpg);"></div>
+										</a>
+									</div>
+									<div class="post_text">
+										<h2 class="panelTitleCss">
+											<a href="./pages/pageInfo.html">
+												建站公告与解释
+											</a>
+										</h2>
+										<p class="panelTextCss">建站于2022年。
+											原先的github+hexo的博客已弃用，原因是....(我是不会跟你们说是我一不小心删掉的。
+											虽然这个画面不太好看，但是比较方便和友好...
+										</p>
+										<!-- 横向的那种 -->
+										<div class="crossLine" style="margin: 10px 0;background-color: rgb(237, 241, 242);"></div>
+										<!-- 发布者 时间 评论 -->
+										<div class="text_bottom">
+											<i class="fontello">
+												<span class="fontello_user">
+													<span class="iconfont icon-yonghu icon600bold"></span>Artfairy
+												</span>
+												<span class="fontello_time">
+													<span class="iconfont icon-riqi icon600bold"></span>2022 年 04 月 12 日
+												</span>
+												<a href="">
+													<span class="fontello_comments">
+														<span class="iconfont icon-commentso icon600bold"></span>22条评论
+													</span>
+												</a>
+											</i>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<!-- 首页页码部分 -->
+							<nav class="page_Item">
+								<ol>
+									<li><a href=""><span class="iconfont icon-left" style="font-size: 12px;margin: 0;"></span></a></li><li class="page_current"><a href="">1</a></li><li><a href=""><span class="iconfont icon-right" style="font-size: 12px;margin: 0;"></span></a></li>
+								</ol>
+							</nav>
+						</div>
+					</div>
+					<!-- 主体侧边部分 -->
+					<aside class="main_aside">
+						<div class="side_bar">
+							<section>
+								<div class="nav_tabs">
+									<ul>
+										<li class="active tabLink"><a href="javascript:shiftTab('hot');"><i class="iconfont icon-remen"></i></a></li>
+										<li class="tabLink"><a href="javascript:shiftTab('new');"><i class="iconfont icon-comment"></i></a></li>
+										<li class="tabLink"><a href="javascript:shiftTab('rand');"><i class="iconfont icon-repeat"></i></a></li>
+									</ul>
+								</div>
+								<script>
+									var liList = document.getElementsByClassName("tabLink"),
+										tab_hots = document.getElementsByClassName("tab_hots"),
+										tab_comments = document.getElementsByClassName("tab_comments"),
+										tab_rand = document.getElementsByClassName("tab_rand");
+									
+									function shiftTab(v) {
+										switch(v) {
+											case "hot":
+												liList[0].className += " active";
+												liList[1].className = "tabLink";
+												liList[2].className = "tabLink";
+												tab_hots[0].style.display = "block";
+												tab_comments[0].style.display = "none";
+												tab_rand[0].style.display = "none";
+												break;
+											case "new":
+												liList[1].className += " active";
+												liList[0].className = "tabLink";
+												liList[2].className = "tabLink";
+												tab_hots[0].style.display = "none";
+												tab_comments[0].style.display = "block";
+												tab_rand[0].style.display = "none";
+												break;
+											case "rand":
+												liList[2].className += " active";
+												liList[0].className = "tabLink";
+												liList[1].className = "tabLink";
+												tab_hots[0].style.display = "none";
+												tab_comments[0].style.display = "none";
+												tab_rand[0].style.display = "block";
+												break;
+											default:
+												return false;
+										}
+									}
+								</script>
+								<div class="tab_content">
+									<!-- 热门文章 -->
+									<div class="tab_hots" >
+										<h3 class="content_title">热门文章</h3>
+										<ul>
+											<li>
+												<a href=""><img src="" alt="" class="rand_headimg headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>【梯子】分享一个“合法科学上网”的浏览器——酷鸟浏览器 灵狐浏览器</h4>
+													</a>
+													<small><span class="iconfont icon-view icon600bold"></span>12008</small>
+												</div>
+											</li>
+											<li>
+												<a href=""><img src="" alt="" class="rand_headimg headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>安卓下载动物之森口袋版(Pocket Camp)详细教程</h4>
+													</a>
+													<small><span class="iconfont icon-view icon600bold"></span>11008</small>
+												</div>
+											</li>
+											<li>
+												<a href=""><img src="" alt="" class="rand_headimg headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>我们每天度过的日常,也许就是不断发生的奇迹!</h4>
+													</a>
+													<small><span class="iconfont icon-view icon600bold"></span>9008</small>
+												</div>
+											</li>
+											<li>
+												<a href=""><img src="" alt="" class="rand_headimg headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>Handsome美化 半透明化及一些效果</h4>
+													</a>
+													<small><span class="iconfont icon-view icon600bold"></span>9086</small>
+												</div>
+											</li>
+											<li>
+												<a href=""><img src="" alt="" class="rand_headimg headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>【梯子】分享一个“合法科学上网”的浏览器——酷鸟浏览器 灵狐浏览器</h4>
+													</a>
+													<small><span class="iconfont icon-view icon600bold"></span>4396</small>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<!-- 最新评论 -->
+									<div class="tab_comments" style="display: none;">
+										<h3 class="content_title">最新评论</h3>
+										<ul>
+											<li>
+												<a href=""><img src="http://q1.qlogo.cn/g?b=qq&nk=153669225&s=100" alt="" class="headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>Danyhug</h4>
+													</a>
+													<small>中秋快乐</small>
+												</div>
+											</li>
+											<li>
+												<a href=""><img src="http://q1.qlogo.cn/g?b=qq&nk=2715528996&s=100" alt="" class="headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>YY</h4>
+													</a>
+													<small>阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴</small>
+												</div>
+											</li>
+											<li>
+												<a href=""><img src="http://q1.qlogo.cn/g?b=qq&nk=1250616517&s=100" alt="" class="headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>Tivsh</h4>
+													</a>
+													<small>谢谢分享,日常打卡~ 滴滴~</small>
+												</div>
+											</li>
+											<li>
+												<a href=""><img src="http://q1.qlogo.cn/g?b=qq&nk=3295800469&s=100" alt="" class="headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>Test01</h4>
+													</a>
+													<small>Blog Testing By Test01</small>
+												</div>
+											</li>
+											<li>
+												<a href=""><img src="http://q1.qlogo.cn/g?b=qq&nk=2076103221&s=100" alt="" class="headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>Admin</h4>
+													</a>
+													<small>2022年04月13日 10点50分</small>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<!-- 随机文章 -->
+									<div class="tab_rand" style="display: none;">
+										<h3 class="content_title">随机文章</h3>
+										<ul>
+											<li>
+												<a href=""><img src="" alt="" class="rand_headimg headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>【梯子】分享一个“合法科学上网”的浏览器——酷鸟浏览器 灵狐浏览器</h4>
+													</a>
+													<small><span class="iconfont icon-view icon600bold"></span>12008</small>
+												</div>
+											</li>
+											<li>
+												<a href=""><img src="" alt="" class="rand_headimg headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>安卓下载动物之森口袋版(Pocket Camp)详细教程</h4>
+													</a>
+													<small><span class="iconfont icon-view icon600bold"></span>11008</small>
+												</div>
+											</li>
+											<li>
+												<a href=""><img src="" alt="" class="rand_headimg headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>我们每天度过的日常,也许就是不断发生的奇迹!</h4>
+													</a>
+													<small><span class="iconfont icon-view icon600bold"></span>9008</small>
+												</div>
+											</li>
+											<li>
+												<a href=""><img src="" alt="" class="rand_headimg headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>Handsome美化 半透明化及一些效果</h4>
+													</a>
+													<small><span class="iconfont icon-view icon600bold"></span>9086</small>
+												</div>
+											</li>
+											<li>
+												<a href=""><img src="" alt="" class="rand_headimg headimg turn360"></a>
+												<div class="clear">
+													<a href="">
+														<h4>【梯子】分享一个“合法科学上网”的浏览器——酷鸟浏览器 灵狐浏览器</h4>
+													</a>
+													<small><span class="iconfont icon-view icon600bold"></span>4396</small>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<script>
+									// 随机头像
+									var img = document.getElementsByClassName("rand_headimg headimg");
+									var src = "./img/touxiang/";
+									var imgSrc = new Array();
+									imgSrc[0] = src + "default" + ".jpg";
+									for(var i = 1; i <= 10; i++) {
+										imgSrc[i] = src + i + ".jpg";
+									}
+									
+									for(var i = 0; i <= 9; i++) {
+										// 生成随机数
+										var rand = Math.floor(Math.random()*10)+1;
+										for(;imgSrc[rand] == undefined;) {
+											rand = Math.floor(Math.random()*10)+1;
+										}
+										
+										img[i].src = imgSrc[rand];
+										// alert(imgSrc[rand]);
+										imgSrc.splice(rand, 1);
+									}
+								</script>
+							</section>
+							<!-- 博客信息 -->
+							<section class="aside_info">
+								<h3>博客信息</h3>
+								<ul class="list_group">
+									<li class="list_group_items">
+										<i class="iconfont icon-16"></i>
+										文章数目
+										<span>4</span>
+									</li>
+									<li class="list_group_items">
+										<i class="iconfont icon-comment"></i>
+										评论数目
+										<span>5</span>
+									</li>
+									<li class="list_group_items">
+										<i class="iconfont icon-tongji"></i>
+										运行天数
+										<span>1</span>
+									</li>
+									
+									<li class="list_group_items">
+										<i class="iconfont icon-dongtaijiance"></i>
+										最后活动
+										<span id="day">
+											<div id="datetime">
+												<script>
+													 setInterval("document.getElementById('datetime').innerHTML=new Date().toLocaleString();", 1000);
+												</script>
+											</div> 
+										</span>
+									</li>
+								</ul>
+							</section>
+							<!-- 标签云 -->
+							<section class="aside_clude">
+								<h3>标签云</h3>
+								<div class="tags">
+									<a href="" class="clude_label">css</a>
+									<a href="" class="clude_label">英雄联盟</a>
+									<a href="" class="clude_label">Golang</a>
+									<a href="" class="clude_label">Redis</a>
+									<a href="" class="clude_label">Windows</a>
+									<a href="" class="clude_label">手机</a>
+									<a href="" class="clude_label">脱发</a>
+									<a href="" class="clude_label">日常</a>
+									<a href="" class="clude_label">摘抄</a>
+									<a href="" class="clude_label">随笔</a>
+									<a href="" class="clude_label">日常</a>
+									<a href="" class="clude_label">算法</a>
+									<a href="" class="clude_label">水</a>
+								</div>
+							</section>
+						</div>
+					</aside>
+				</div>
+			</main>
+			
+			<!-- 首页底部版权部分 -->
+			<footer>
+				<div class="copyright">
+					© 2022 Copyright  闽ICP备18000760号-1
+				</div>
+				<div class="explain">
+					© Artfairy 
+				</div>
+			</footer>
+		
+			<!-- 向上滚动 -->
+			<a href="javascript:window.scrollTo( 0, 0 );"><div class="top_button iconfont icon-arrowup"></div></a>
+		</div>
+	</body>
+</html>
+<script>
+	var body = document.body,
+		bodyHeight = document.getElementById("body").clientHeight;
+	window.onscroll = function() {
+		var topBtn = document.getElementsByClassName("top_button");
+		if(document.documentElement.scrollTop >= bodyHeight/2) {
+			topBtn[0].style.display = "block";
+		} else {
+			topBtn[0].style.display = "none";
+		}
+	}
+</script>
+<!-- 平滑滚动 -->
+ <!-- <script src="https://dxoca.cn/usr/themes/handsome/assets/js/features/SmoothScroll.min.js"></script> -->
